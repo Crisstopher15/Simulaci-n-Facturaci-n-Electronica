@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Consulta Pública DTE - Redireccionando...</title>
+    <script>
+        // Redirige cualquier ruta (como /consultaPublica) al index.html manteniendo todos los parámetros del QR
+        var search = window.location.search;
+        var hash = window.location.hash;
+        // Obtener la raíz del repositorio
+        var pathSegments = window.location.pathname.split('/').filter(Boolean);
+        var repoBase = pathSegments.length > 0 ? '/' + pathSegments[0] + '/' : '/';
+        window.location.replace(repoBase + 'index.html' + search + hash);
+    </script>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 50px; color: #4b5563;">
+    <p>Cargando información del documento tributario...</p>
+</body>
+</html>

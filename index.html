@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es-es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Consulta Pública de Documentos Tributarios Electrónicos (DTE) - Ministerio de Hacienda">
+    <meta name="author" content="Ministerio de Hacienda">
+    <title>Sistema de Facturación DTES</title>
+    
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- Bootstrap & FontAwesome locales -->
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+</head>
+<body id="page-top">
+
+    <!-- CABECERA INSTITUCIONAL GOBIERNO / HACIENDA -->
+    <header class="portal-header">
+        <div class="portal-header-inner">
+            <a href="https://www.mh.gob.sv" target="_blank" class="portal-brand" title="Ir al sitio web institucional del Ministerio de Hacienda">
+                <img src="assets/img/LogoHacienda.svg" alt="Ministerio de Hacienda - Gobierno de El Salvador" class="portal-logo-mh">
+            </a>
+            
+            <a href="https://factura.gob.sv/informacion-tecnica-y-funcional/" target="_blank" class="manual-link-row" title="Manual de Usuario">
+                <img src="assets/img/icono-factura-azul.svg" alt="Icono Facturación Electrónica" class="manual-icon">
+                <span class="manual-text">Manual de Usuario</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- CUERPO PRINCIPAL / TARJETA DTE -->
+    <main class="main-wrapper">
+        <div class="dte-card">
+            <!-- Encabezado de la tarjeta con check verde -->
+            <div class="dte-card-header">
+                <img src="assets/img/listo.png" alt="Estado Satisfactorio" class="dte-status-badge">
+                <h1 class="dte-card-title">Resultado de Consulta del DTE</h1>
+            </div>
+
+            <!-- Campos detallados del DTE -->
+            <div class="dte-card-body">
+                
+                <!-- 1. Estado del DTE -->
+                <div class="field-item">
+                    <div class="field-label">Estado del DTE:</div>
+                    <div class="field-value" id="dte-estado">Transmitido Satisfactoriamente</div>
+                </div>
+
+                <!-- 2. Descripción del DTE -->
+                <div class="field-item">
+                    <div class="field-label">Descripción del DTE:</div>
+                    <div class="field-value" id="dte-descripcion">DTE transmitido y registrado satisfactoriamente en la DGII.</div>
+                </div>
+
+                <!-- 3. Tipo de DTE -->
+                <div class="field-item">
+                    <div class="field-label">Tipo de DTE:</div>
+                    <div class="field-value" id="dte-tipo">FACTURA</div>
+                </div>
+
+                <!-- 4. Fecha y Hora de Generación -->
+                <div class="field-item">
+                    <div class="field-label">Fecha y Hora de Generación:</div>
+                    <div class="field-value" id="dte-fecha-gen">2026-11-19 12:42:09</div>
+                </div>
+
+                <!-- 5. Fecha y Hora de Transmisión -->
+                <div class="field-item">
+                    <div class="field-label">Fecha y Hora de Transmisión:</div>
+                    <div class="field-value" id="dte-fecha-trans">2026-11-19 12:42:09</div>
+                </div>
+
+                <!-- 6. Código de Generación -->
+                <div class="field-item">
+                    <div class="field-label">Código de Generación:</div>
+                    <div class="field-value" id="dte-cod-gen">F6D2C3D7-47BF-41FB-8A2F-777E76A316A1</div>
+                </div>
+
+                <!-- 7. Sello de Recepción -->
+                <div class="field-item">
+                    <div class="field-label">Sello de Recepción:</div>
+                    <div class="field-value" id="dte-sello">2026B612F466D7C8493F8B596D97F56ADF1FJWDU</div>
+                </div>
+
+                <!-- 8. Número de Control -->
+                <div class="field-item">
+                    <div class="field-label">Número de Control:</div>
+                    <div class="field-value" id="dte-control">DTE-01-M001P003-000000000012935</div>
+                </div>
+
+                <!-- 9. Monto Total de la Operación -->
+                <div class="field-item">
+                    <div class="field-label">Monto Total de la Operación:</div>
+                    <div class="field-value" id="dte-monto">$9.00</div>
+                </div>
+
+                <!-- 10. IVA de las operaciones -->
+                <div class="field-item">
+                    <div class="field-label">IVA de las operaciones:</div>
+                    <div class="field-value" id="dte-iva">$1.04</div>
+                </div>
+
+                <!-- 11. IVA percibido -->
+                <div class="field-item">
+                    <div class="field-label">IVA percibido:</div>
+                    <div class="field-value" id="dte-iva-percibido">$0.00</div>
+                </div>
+
+                <!-- 12. IVA retenido -->
+                <div class="field-item">
+                    <div class="field-label">IVA retenido:</div>
+                    <div class="field-value" id="dte-iva-retenido">$0.00</div>
+                </div>
+
+                <!-- 13. Retención renta -->
+                <div class="field-item">
+                    <div class="field-label">Retención renta:</div>
+                    <div class="field-value" id="dte-retencion-renta">$0.00</div>
+                </div>
+
+                <!-- 14. Total Valores no Afectos -->
+                <div class="field-item">
+                    <div class="field-label">Total Valores no Afectos:</div>
+                    <div class="field-value" id="dte-valores-no-afectos">$0.00</div>
+                </div>
+
+                <!-- 15. Total de Operación -->
+                <div class="field-item">
+                    <div class="field-label">Total de Operación:</div>
+                    <div class="field-value" id="dte-total">$9.00</div>
+                </div>
+
+                <!-- 16. Documento ajustado -->
+                <div class="field-item">
+                    <div class="field-label">Documento ajustado:</div>
+                    <div class="field-value" id="dte-doc-ajustado">El documento no ha sido ajustado</div>
+                </div>
+
+                <!-- 17. Documento con Evento aplicado -->
+                <div class="field-item">
+                    <div class="field-label">Documento con Evento aplicado:</div>
+                    <div class="field-value" id="dte-evento">NO</div>
+                </div>
+
+                <!-- Botón de Acción -->
+                <div>
+                    <a href="index.html" class="btn-nueva-consulta" id="btnNuevaConsulta">Nueva Consulta</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER INSTITUCIONAL -->
+    <footer class="portal-footer">
+        <div class="portal-footer-inner">
+            <div class="footer-col-left">
+                Ministerio De Hacienda, El Salvador<br>
+                <span id="dte-version">v202611120833</span>
+            </div>
+            <div class="footer-col-center">
+                <img src="assets/img/LogoGOES.svg" alt="Gobierno de El Salvador" class="footer-logo-goes">
+            </div>
+            <div class="footer-col-right">
+                <a href="https://factura.gob.sv/politicas-de-privacidad/" target="_blank" class="footer-privacy-link">Políticas de privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DISCRETO PARA SIMULADOR / INTEGRACIÓN -->
+    <div class="dev-helper-pill" id="devPill" onclick="openDevModal()" title="Opciones para probar datos y generar enlace para GitHub">
+        <i class="fas fa-magic text-warning"></i>
+        <span>Probar datos / Generar Enlace QR</span>
+        <button class="btn btn-sm text-light p-0 ml-2" onclick="event.stopPropagation(); document.getElementById('devPill').style.display='none';" title="Ocultar">&times;</button>
+    </div>
+
+    <!-- MODAL DE INTEGRACIÓN Y CONFIGURACIÓN -->
+    <div class="dev-modal-overlay" id="devModal" onclick="closeDevModalOnBg(event)">
+        <div class="dev-modal-card">
+            <div class="dev-modal-header">
+                <h4 style="margin:0; font-size: 19px; font-weight:700; color:#1e293b;">
+                    <i class="fas fa-qrcode text-primary mr-2"></i> Generador y Conector de Factura (GitHub Pages)
+                </h4>
+                <button class="dev-modal-close" onclick="closeDevModal()">&times;</button>
+            </div>
+
+            <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">
+                Este sitio es 100% estático (HTML, CSS, JS), ideal para <strong>GitHub Pages</strong>. Lee dinámicamente cualquier monto o factura pasando los parámetros en la URL desde tu otro sitio o en tu código QR.
+            </p>
+
+            <!-- Pestañas de configuración -->
+            <ul class="nav nav-tabs mb-3" id="devTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active font-weight-bold" id="form-tab" data-toggle="tab" href="#tab-form" role="tab">Simular Datos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" id="link-tab" data-toggle="tab" href="#tab-link" role="tab">Cómo conectar desde otro sitio</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="devTabContent">
+                <!-- TAB 1: FORMULARIO RÁPIDO PARA SIMULAR DATOS -->
+                <div class="tab-pane fade show active" id="tab-form" role="tabpanel">
+                    <form method="GET" action="index.html" id="simulatorForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold small">Monto Total ($):</label>
+                                <input type="number" step="0.01" class="form-control form-control-sm" name="monto" id="inputMonto" value="9.00" oninput="autoCalcIvaInput(this.value)">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold small">IVA Calculado ($):</label>
+                                <input type="number" step="0.01" class="form-control form-control-sm" name="iva" id="inputIva" value="1.04">
+                                <small class="text-muted">Calculado al 13% incluido para Factura consumidor final.</small>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold small">Tipo de DTE:</label>
+                                <select class="form-control form-control-sm" name="tipoDte" id="selectTipoDte">
+                                    <option value="FACTURA">FACTURA</option>
+                                    <option value="COMPROBANTE DE CRÉDITO FISCAL">COMPROBANTE DE CRÉDITO FISCAL</option>
+                                    <option value="NOTA DE CRÉDITO">NOTA DE CRÉDITO</option>
+                                    <option value="NOTA DE DÉBITO">NOTA DE DÉBITO</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold small">Número de Control:</label>
+                                <input type="text" class="form-control form-control-sm" name="numeroControl" id="inputControl" value="DTE-01-M001P003-000000000012935">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold small">Código de Generación (UUID):</label>
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" name="codGen" id="inputCodGen" value="F6D2C3D7-47BF-41FB-8A2F-777E76A316A1">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="generateNewUUID()" title="Generar nuevo UUID"><i class="fas fa-random"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold small">Sello de Recepción:</label>
+                                <input type="text" class="form-control form-control-sm" name="sello" id="inputSello" value="2026B612F466D7C8493F8B596D97F56ADF1FJWDU">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold small">Fecha y Hora:</label>
+                                <input type="text" class="form-control form-control-sm" name="fechaEmi" id="inputFechaEmi" value="2026-11-19 12:42:09">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="font-weight-bold small">Estado del DTE:</label>
+                                <input type="text" class="form-control form-control-sm" name="estadoDoc" value="Transmitido Satisfactoriamente">
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="resetToDefault()">Restablecer a captura original</button>
+                            <button type="submit" class="btn btn-sm btn-primary px-4"><i class="fas fa-check mr-1"></i> Aplicar y Ver Resultado</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- TAB 2: CÓMO CONECTAR -->
+                <div class="tab-pane fade" id="tab-link" role="tabpanel">
+                    <h6 class="font-weight-bold text-dark">1. Enlace para tu QR o Botón de "Ver Factura"</h6>
+                    <p class="small text-muted mb-1">Tu otro sitio web o tu generador de tickets puede crear enlaces hacia este sitio en GitHub Pages:</p>
+                    <div class="code-box" id="snippetUrl">Cargando enlace...</div>
+
+                    <h6 class="font-weight-bold text-dark mt-4">2. Generar el enlace dinámicamente desde tu otro sitio (JavaScript o cualquier lenguaje)</h6>
+                    <div class="code-box">// En JavaScript (desde tu tienda o POS):
+const baseUrl = "https://TU_USUARIO.github.io/factura-electronica/";
+const urlFactura = baseUrl + "?" + new URLSearchParams({
+    monto: 25.50,
+    codGen: "F6D2C3D7-47BF-41FB-8A2F-777E76A316A1",
+    tipoDte: "FACTURA"
+}).toString();
+
+// Este es el enlace que imprimes en el QR:
+console.log(urlFactura);</div>
+
+                    <h6 class="font-weight-bold text-dark mt-4">3. Si tu otro sitio está hecho en PHP:</h6>
+                    <div class="code-box">&lt;?php
+$url = "https://TU_USUARIO.github.io/factura-electronica/?" . http_build_query([
+    'monto' => 19.99,
+    'codGen' => 'F6D2C3D7-47BF-41FB-8A2F-777E76A316A1',
+    'tipoDte' => 'FACTURA'
+]);
+?&gt;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script principal de la aplicación -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
